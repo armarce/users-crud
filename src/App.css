@@ -141,12 +141,16 @@ article footer{
   display: flex;
   gap: 20px
 }
-dialog#delete-user article h4, dialog#update-user article h4{
+dialog#delete-user article h4, 
+dialog#update-user article h4,
+dialog#add-user article h4{
   color: green;
   margin-bottom: 60px;
   text-align: center;
 }
-dialog#delete-user article h4 i, dialog#update-user article h4 i{
+dialog#delete-user article h4 i, 
+dialog#update-user article h4 i, 
+dialog#add-user article h4 i{
   font-size: 1.4rem;
   padding-right: 10px;
 }

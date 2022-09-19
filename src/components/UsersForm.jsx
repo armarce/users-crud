@@ -37,6 +37,7 @@ import { useForm } from "react-hook-form";
         
         getUsers();
         toggleModal('modal');
+        toggleModal('update-user')
 
         });     
 
@@ -49,6 +50,7 @@ import { useForm } from "react-hook-form";
             
             getUsers();
             toggleModal('modal');
+            toggleModal('add-user')
 
             })
           .catch((error) => console.log(error.response));
@@ -78,7 +80,16 @@ import { useForm } from "react-hook-form";
             <a href="#close" onClick={() => toggleModal('update-user')} className="close"></a>
             <h4>
               <i class="fa-solid fa-circle-check"></i> 
-              Usuario agregado
+              Modified user
+            </h4>
+        </article>
+      </dialog>
+      <dialog id="add-user">
+        <article>
+            <a href="#close" onClick={() => toggleModal('add-user')} className="close"></a>
+            <h4>
+              <i class="fa-solid fa-circle-check"></i> 
+              Added user
             </h4>
         </article>
       </dialog>

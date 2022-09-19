@@ -21,7 +21,7 @@ const UsersList = ({ users, selectUser, getUsers }) => {
           <a href="#close" onClick={() => toggleModal('delete-user')} className="close"></a>
           <h4>
             <i class="fa-solid fa-circle-check"></i> 
-            Usuario eliminado
+            User deleted
           </h4>
       </article>
     </dialog>
