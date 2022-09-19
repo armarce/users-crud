@@ -222,4 +222,7 @@ dialog#add-user article h4 i{
     display: inline-block;
     width: auto;
   }
+  nav div a{
+    width: 7.4rem;
+  }
 }

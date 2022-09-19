@@ -46,7 +46,7 @@ function App() {
 
   return (
     <>
-        { isLoading ? 
+      { isLoading ? 
       (<span class="loader"></span>) 
       :
       (
