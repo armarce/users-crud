@@ -218,4 +218,8 @@ dialog#add-user article h4 i{
     width: auto;
     grid-template-columns: 320px;
   }
+  ul li b{
+    display: inline-block;
+    width: auto;
+  }
 }
