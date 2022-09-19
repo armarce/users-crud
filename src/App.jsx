@@ -11,12 +11,15 @@ function App() {
 
   const [userSelected, setUserSelected] = useState(null);
 
+  const [isLoading, setIsLoading] = useState(true);
+
  /***** FUNCTION useEffect *****/
 
   useEffect(() => {
     axios
       .get(`https://users-crud1.herokuapp.com/users/`)
-      .then((res) => setUsers(res.data));
+      .then(res => setUsers(res.data))
+      .finally(() => setIsLoading(!isLoading));
   }, []);
 
   const getUsers = () => {
@@ -43,22 +46,30 @@ function App() {
 
   return (
     <>
-      <nav>
-        <h1><i className="fa-solid fa-user-gear"></i> Users</h1>
-        <div>
-            <a href="#" role="button" onClick={() => openModal('modal')}><i className="fa-solid fa-plus"></i> Add User</a>
-        </div>
-      </nav>
-      <UsersForm
-        getUsers={getUsers}
-        userSelected={userSelected}
-        deselectUser={deselectUser}
-      />
-      <UsersList
-        selectUser={selectUser}
-        users={users}
-        getUsers={getUsers}
-      />
+        { isLoading ? 
+      (<span class="loader"></span>) 
+      :
+      (
+        <>
+          <nav>
+            <h1><i className="fa-solid fa-user-gear"></i> Users</h1>
+            <div>
+                <a href="#" role="button" onClick={() => openModal('modal')}><i className="fa-solid fa-plus"></i> Add User</a>
+            </div>
+          </nav>
+          <UsersForm
+            getUsers={getUsers}
+            userSelected={userSelected}
+            deselectUser={deselectUser}
+          />
+          <UsersList
+            selectUser={selectUser}
+            users={users}
+            getUsers={getUsers}
+          />
+        </>
+      )
+      }
     </>
   );
 }
